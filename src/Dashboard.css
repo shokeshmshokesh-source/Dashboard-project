@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 30px;
+    min-height: 100vh;
+    padding: 32px;
+}
+
+.calass-card {
+    display: flex;
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    flex-direction: column;
+    padding: 28px 20px;
+    border-radius: 14px;
+    background: #172554;
+    color: #fff;
+}
+
+.calass-card h2 {
+    margin: 0 0 32px;
+    font-size: 1.25rem;
+}
+
+.calass-card p {
+    margin: 0 0 8px;
+    padding: 12px;
+    border-radius: 8px;
+    color: #cbd5e1;
+}
+
+.sidebar-link {
+    display: block;
+    margin-bottom: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    color: #cbd5e1;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background: #1e40af;
+    color: #fff;
+}
+
+.calass-card button {
+    margin-top: auto;
+    padding: 12px;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.calass-card button:hover {
+    background: #1e3a8a;
+}
+
+.heading {
+    display: grid;
+    grid-column: 2;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-content: start;
+}
+
+.heading h1,
+.heading > p {
+    grid-column: 1 / -1;
+}
+
+.heading h1 {
+    margin: 0 0 -12px;
+    color: #0f172a;
+    font-size: clamp(1.7rem, 3vw, 2rem);
+}
+
+.heading > p {
+    margin: 0 0 8px;
+    color: #64748b;
+}
+
+.box {
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgb(15 23 42 / 4%);
+}
+
+.box h2 {
+    margin: 0 0 14px;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.box p {
+    margin: 0;
+    color: #0f172a;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.main-container > h2 {
+    grid-column: 2;
+    align-self: end;
+    margin: 4px 0 -14px;
+    color: #0f172a;
+    font-size: 1.2rem;
+}
+
+.main-container > table {
+    grid-column: 2;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgb(15 23 42 / 4%);
+    text-align: left;
+}
+
+.main-container > table th,
+.main-container > table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.main-container > table th {
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.main-container > table td {
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+.main-container > table tr:last-child td {
+    border-bottom: 0;
+}
+
+.user-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.active-status {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.pending-status {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+@media (max-width: 800px) {
+    .main-container {
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 20px;
+        padding: 22px;
+    }
+
+    .heading {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .box {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px;
+    }
+
+    .calass-card {
+        grid-column: 1;
+        grid-row: auto;
+        padding: 20px;
+    }
+
+    .calass-card h2 {
+        margin-bottom: 14px;
+    }
+
+    .calass-card button {
+        margin-top: 12px;
+    }
+
+    .heading,
+    .main-container > h2,
+    .main-container > table {
+        grid-column: 1;
+    }
+
+    .heading {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .box {
+        padding: 14px;
+    }
+
+    .box p {
+        font-size: 1.4rem;
+    }
+
+    .main-container > table th,
+    .main-container > table td {
+        padding: 12px 8px;
+        font-size: 0.82rem;
+        overflow-wrap: anywhere;
+    }
+}
